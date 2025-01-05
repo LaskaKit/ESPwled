@@ -22,6 +22,8 @@ Dodatečné možna budeš potřebovat:
 Deska je dodávána bez LED konektoru, rozteč je 2.54mm. Můžeš dokoupit 1ks [4pin JST-XH pravoúhlý](https://www.laskakit.cz/jst-xh-2-54mm-konektor-do-dps--pravouhly/?variantId=5393) nebo [2ks 2 pin šroubovací svorkovnice do DPS KF128-2.54](https://www.laskakit.cz/sroubovaci-svorkovnice-do-dps-kf128-2-54/?variantId=8871) anebo kolíkovou lištu.
 Vhodný pigtail s konektorem IPEX3 pro verze IPEX - [Pigtail MHF3/IPEX3 - SMA Female](https://www.laskakit.cz/pigtail-mhf3-ipex3-sma-female--kabel-1-15mm--15cm/), kabel 1,15mm, 15cm
 
+Výchozí WLED firmware nepodporuje vstup z mikrofonu pro ESP32-C3 (ESPwled), pokud je mikrofonní vstup potřeba, je nutné si zkompilovat WLED firmware s jiným nastavením.
+
 Zapojení LED pásku vidíš na obrázku níže
 ![ESPwled zapojení LED pásku](https://github.com/LaskaKit/ESPwled/blob/main/img/espwled_zapojeni.JPG)
 
