@@ -46,6 +46,7 @@
 
 #define BLACK 0
 #define WHITE 1
+#define NO_ERROR 0
 
 Adafruit_NeoPixel rgbLed(1, PIN_RGB, NEO_GRB + NEO_KHZ800);
 SensirionI2cSen66 sen66Sensor;
@@ -124,9 +125,6 @@ void printParam(int index, int &y, const char* label, float value, const char* u
   y += 45;  // posun pro další parametr
 }
 
-
-
-
 void setup() {
   Serial.begin(115200);
   delay(2000);
@@ -134,6 +132,18 @@ void setup() {
 
   Wire.begin(PIN_SDA, PIN_SCL);
   sen66Sensor.begin(Wire, SEN66_I2C_ADDR_6B);
+  int error = sen66Sensor.deviceReset();
+  if (error != NO_ERROR)
+  {
+    Serial.print(F("[ERROR] Nemohu číst SEN66. Kód chyby: "));
+    Serial.println(error);
+  }
+  error = sen66Sensor.startContinuousMeasurement();
+  if (error != NO_ERROR)
+  {
+    Serial.print(F("[ERROR] Nemohu číst SEN66. Kód chyby: "));
+    Serial.println(error);
+  }
 
   lcd.begin();
   lcd.setRotation(3);
@@ -151,7 +161,7 @@ void setup() {
   lcd.setCursor(5, 50);
   lcd.println("SEN66 + RGB LED + MemoryLCD");
   lcd.refresh();
-  delay(1500);
+  delay(3000);
   lcd.clearDisplay();
 
   Serial.println(F("[BOOT] Setup dokončen.\n"));
