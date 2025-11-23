@@ -1,4 +1,4 @@
-# Uteč! – ESP32 hra s adresovatelným LED páskem
+# Uteč! – ESPWLED hra s adresovatelným LED páskem
 
 **Uteč!** je interaktivní hra pro [ESPWLED (ESP32-C3)](https://www.laskakit.cz/laskakit-espwled/?variantId=16925), kde hráč závodí s duchem po LED polích. Cílem je dosáhnout koncového pole dříve než duch. Hráč postupuje odpovídáním na otázky, duch postupuje při chybné odpovědi.
 
