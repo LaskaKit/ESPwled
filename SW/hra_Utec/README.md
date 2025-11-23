@@ -98,8 +98,8 @@ Příklad</br>
 
 LED pás zobrazuje dynamicky pozice hráče a ducha.
 
-![Webová stránka hry](https://github.com/LaskaKit/ESPwled/new/main/SW/hra_Utec/Utec_1.jpeg)
-![Webová stránka hry](https://github.com/LaskaKit/ESPwled/new/main/SW/hra_Utec/Utec_2.jpeg)
+<img src="https://github.com/LaskaKit/ESPwled/blob/main/SW/hra_Utec/Utec_1.jpeg" width="50%" alt="Webová stránka hry">
+<img src="https://github.com/LaskaKit/ESPwled/blob/main/SW/hra_Utec/Utec_2.jpeg" width="50%" alt="Webová stránka hry">
 
 ---
 
