@@ -76,9 +76,15 @@ Příklad</br>
    - Adafruit_NeoPixel
    - AsyncTCP
    - ESPAsyncWebServer
-   - Povolte USB CDC On Boot (menu - Tools - nastavit na Enabled)
-3. Nahrajte `hra_Utec.ino` do ESPWLED.
-4. Po spuštění:
+3. Povolte USB CDC On Boot (menu - Tools - nastavit na Enabled)
+4. Nahrajte `hra_Utec.ino` do ESPWLED.
+   - Pokud nelze program do ESPWLED nahrát, přepněte jej manuálně do bootloader módu.
+   - Připojte nabíjecí adaptér do USB-C konektoru.
+   - Stiskněte a držte tlačítko FLASH
+   - Stiskněte a uvolněte tlačítko RESET
+   - Uvolněte tlačítko RESET
+   - Nahrajte program do ESPWLED
+5. Po spuštění:
    - ESPWLED (ESP32-C3) vytvoří Wi-Fi Access Point `hraUtecAP` (heslo `utec1234`).
    - Připojte se přes prohlížeč na `http://192.168.4.1`.
    - Nahrajte otázky a spusťte hru.
