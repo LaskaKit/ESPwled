@@ -48,8 +48,10 @@ Otázky se nahrávají přes webové rozhraní v tomto formátu (7 polí, odděl
 	`ID;Otázka;Odpověď1;Odpověď2;Odpověď3;Odpověď4;IndexSprávnéOdpovědi(1..4)`
 
 ### Prompt pro generování otázek a odpovědí
-Jsi AI generátor kvízových otázek. Vytvoř prosím otázky ve formátu vhodném pro hru **"Uteč!"** na ESP32-C3.  
-Každá otázka musí mít přesně 7 částí oddělených středníkem (`;`):
+Jsi AI generátor kvízových otázek. Vytvoř prosím otázky ve formátu vhodném pro hru **"Uteč!"** na ESP32-C3.</br>
+Otázky musí být zaměřeny na (**zde zadejte téma otázek**). </br>
+*Např. Matematiku Základní školy pro první stupeň, Fyziku pro střední školu, Všeobecné znalosti o Evropské Unii a jiné*</br>
+Každá otázka musí mít přesně 7 částí oddělených středníkem (`;`):</br>
 
 ID otázky;Otázka;Odpověď1;Odpověď2;Odpověď3;Odpověď4;Index Správné odpovědi (od 1 do 4)
 
@@ -60,7 +62,7 @@ Pravidla
 3. Každá otázka musí mít **4 možné odpovědi**.  
 4. **Správná odpověď** je číslo od 1 do 4 podle pořadí odpovědí.  
 5. **Nepoužívej čárky** mezi odpověďmi, protože pole se oddělují středníkem.  
-6. Vytvoř **10–20 otázek** v tomto formátu.  
+6. Vytvoř **30 otázek** v tomto formátu.  
 7. Výstup má být **čistě textový**, každá otázka na novém řádku, bez úvodních komentářů.
 
 Příklad</br>
