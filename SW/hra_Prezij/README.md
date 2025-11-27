@@ -45,7 +45,9 @@
 - Uložení WiFi přihlašovacích údajů (automatické připojení)  
 - 2x "Ještě jednou" (skip otázky)  
 - Real-time animace střel a exploze (50ms krok)  
-- Otázky uložené v RAM (max 200 otázek)  
+- Otázky uložené v RAM (max 200 otázek)
+
+  <img src="https://github.com/LaskaKit/ESPwled/blob/main/SW/hra_Prezij/hra_Prezij.jpeg" width="50%" alt="Webová stránka hry">
 
 ## Pokyny
 
