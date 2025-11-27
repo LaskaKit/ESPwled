@@ -31,12 +31,6 @@
 `LED_GND → GND`  
 `LED_5V → PWR(5V)`
 
-### Software
-
-- Adafruit_NeoPixel v1.15.2+  
-- ESPAsyncWebServer v3.9.1+  
-- AsyncTCP v3.4.7+
-
 ## Vlastnosti
 
 - Webové UI přes WiFi AP (SSID: hraPrezijAP, heslo: prezij1234)  
@@ -49,12 +43,27 @@
 
   <img src="https://github.com/LaskaKit/ESPwled/blob/main/SW/hra_Prezij/hra_Prezij.jpeg" width="50%" alt="Webová stránka hry">
 
-## Pokyny
+## Instalace
 
-1. Nahrajte kód do ESPWLED přes Arduino IDE  
-2. Připojte se na WiFi síť `hraPrezijAP` (heslo: `prezij1234`)  
-3. Otevřete IP adresu (obvykle `192.168.4.1`)  
-4. Nahrajte otázky a nastavte WiFi (volitelně, ESPWLED se pak přihlásí do vaší WiFi sítě stejně jako váš telefon)  
-5. Hrajte! Odpovídejte dříve než nepřítel vystřelí  
+1. Nainstalujte Arduino IDE s podporou ESP32-C3.
+2. Nainstalujte knihovny:
+   - Adafruit_NeoPixel
+   - AsyncTCP
+   - ESPAsyncWebServer
+3. Povolte USB CDC On Boot (menu - Tools - nastavit na Enabled)
+4. Nahrajte `hra_Prezij.ino` do ESPWLED.
+   - Pokud nelze program do ESPWLED nahrát, přepněte jej manuálně do bootloader módu.
+   - Připojte nabíjecí adaptér do USB-C konektoru.
+   - Stiskněte a držte tlačítko FLASH
+   - Stiskněte a uvolněte tlačítko RESET
+   - Uvolněte tlačítko RESET
+   - Nahrajte program do ESPWLED
+5. Po spuštění:
+   - ESPWLED (ESP32-C3) vytvoří Wi-Fi Access Point `hraPrezijAP` (heslo `prezij1234`).
+   - Připojte se přes prohlížeč na `http://192.168.4.1`.
+   - Nahrajte otázky a spusťte hru.
+
+> Pokud uložíte Wi-Fi přihlašovací údaje, ESP32-C3 (ESPWLED) se automaticky pokusí připojit k domácí síti a AP zůstane aktivní jako fallback. Není pak nutné se připojovat telefonem k WiFI hraPrezijAP, ale zůstat v domácí síti
+>   
  
 ### ESPWLED, LED pásek i USB adaptér koupíte na [laskakit.cz](https://www.laskakit.cz/laskakit-espwled/?variantId=16925)
