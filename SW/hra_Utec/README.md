@@ -1,18 +1,31 @@
 # Uteč! – ESPWLED hra s adresovatelným LED páskem
 
+![ESPWLED](https://img.shields.io/badge/HW-ESPWLED-brightgreen)
+![ESP32](https://img.shields.io/badge/ESP32-C3-blue)
+![Arduino](https://img.shields.io/badge/Arduino-IDE-orange)
+
 **Uteč!** je interaktivní hra pro [ESPWLED (ESP32-C3)](https://www.laskakit.cz/laskakit-espwled/?variantId=16925), kde hráč závodí s duchem po LED polích. Cílem je dosáhnout koncového pole dříve než duch. Hráč postupuje odpovídáním na otázky, duch postupuje při chybné odpovědi.
 
 ---
+ 
+  ## Hardware
 
-## Hardware
+| Komponenta      | Specifikace                      | Odkaz                                                      |
+|-----------------|---------------------------------|------------------------------------------------------------|
+| ESPWLED         | ESP32-C3 + LED driver           | [laskakit.cz](https://www.laskakit.cz/laskakit-espwled/?variantId=16925) |
+| LED pásek       | WS2812B, 120 LED (2m/60LED/m)   | [laskakit.cz WS2812B](https://www.laskakit.cz/vyhledavani/?string=ws2812b) [LaskaKit ESPwled adaptér pro LED pásek JST-SM-3](https://www.laskakit.cz/laskakit-espwled-adapter-pro-led-pasek-jst-sm-3--10-cm/), [4pinový konektor pro LED pásek](https://www.laskakit.cz/jst-xh-2-54mm-konektor-do-dps--pravouhly/?variantId=5393) |
+| Napájení        | 5V/2A+                          | [USB adapter](https://www.laskakit.cz/sitovy-napajeci-adapter-5v-3a--kabel-usb-c-usb-a-vypinac) | 
 
-- **Mikrokontrolér:** ESP32-C3, využijte desku [ESPWLED](https://www.laskakit.cz/laskakit-espwled/?variantId=16925)
-- **Redukce pro LED pásek:** [LaskaKit ESPwled adaptér pro LED pásek JST-SM-3](https://www.laskakit.cz/laskakit-espwled-adapter-pro-led-pasek-jst-sm-3--10-cm/), [4pinový konektor pro LED pásek](https://www.laskakit.cz/jst-xh-2-54mm-konektor-do-dps--pravouhly/?variantId=5393)
-- **LED pás:** Adresovatelný RGB LED pás (např. WS2812 / NeoPixel), například [Led pásek Neopixel WS2812B 60led/m](https://www.laskakit.cz/led-pasek-neopixel-ws2812b-60led-m-ip30-5m-cerny/)
-  - Pin: GPIO5
-  - Počet LED: 120 (8 LED na pole), pásek ve verzi 60LED/m zkraťte na 2m
-  - LED pásek i ESPWLED se bude napájet z nabíječky s USB-C konektorem. Nabíjecí adaptér musí být minimálně 5V/3A
-     
+
+- Počet LED: 120 (8 LED na pole), pásek ve verzi 60LED/m zkraťte na 2m
+- LED pásek i ESPWLED se bude napájet z nabíječky s USB-C konektorem. Nabíjecí adaptér musí být minimálně 5V/3A
+
+
+**Propojení:**  
+`LED_DATA → DAT(GPIO5)`  
+`LED_GND → GND`  
+`LED_5V → PWR(5V)`
+
 ---
 
 ## Software & Knihovny
@@ -117,6 +130,9 @@ LED pás zobrazuje dynamicky pozice hráče a ducha.
 - Červené = duch  
 - Modré (dimované) = pole
 
+---
+
+### ESPWLED, LED pásek i USB adaptér koupíte na [laskakit.cz](https://www.laskakit.cz/laskakit-espwled/?variantId=16925)
 ---
 
 ## Licence
