@@ -58,10 +58,8 @@ VERZE: 1.0
 
 #define LED_PIN        5
 #define LED_COUNT      120
-#define LEDS_PER_FIELD 8
-#define FIELDS         (LED_COUNT / LEDS_PER_FIELD)
 
-Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_BRG + NEO_KHZ800);
 AsyncWebServer server(80);
 Preferences prefs;
 
@@ -252,7 +250,7 @@ void addGameLogOnce(const String &msg) {
 void drawShotsToStrip() {
   // strela protivnika
   if (enemyShotPos >= 0 && enemyShotPos < LED_COUNT) {
-    strip.setPixelColor(enemyShotPos, colorRGB(255, 40, 40));
+    strip.setPixelColor(enemyShotPos, colorRGB(255, 0, 0));
     int behind = enemyShotPos + 1;
     if (behind >= 0 && behind < LED_COUNT) strip.setPixelColor(behind, colorRGB(80, 10, 10));
   }
@@ -260,7 +258,7 @@ void drawShotsToStrip() {
   for (int i=0;i<playerShotCount;i++) {
     int p = playerShots[i];
     if (p >= 0 && p < LED_COUNT) {
-      strip.setPixelColor(p, colorRGB(80, 255, 120));
+      strip.setPixelColor(p, colorRGB(0, 255, 0));
       int behind = p - 1; if (behind >= 0 && behind < LED_COUNT) strip.setPixelColor(behind, colorRGB(20,80,30));
     }
   }
@@ -508,11 +506,12 @@ String generateIndexHtml() {
     color: #dbeafe;
   }
   .answers {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 8px;
   }
   button.answer {
+    width: 100%;
     padding: 12px;
     border-radius: 8px;
     border: 0;
@@ -805,7 +804,6 @@ void setupWebServer() {
     json += "\"skipsLeft\":" + String(max(0,2-skipsUsed)) + ",";
     json += "\"gameOver\":" + (gameOver?String("true"):String("false")) + ",";
     if (gameOver) json += "\"result\":\"" + gameResult + "\",";
-    json += "\"fields\":" + String(FIELDS) + ",";
     json += "\"log\":\"" + jsonEscape(gameLog) + "\"";
     json += "}";
     request->send(200, "application/json", json);
