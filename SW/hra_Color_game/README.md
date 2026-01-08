@@ -6,6 +6,8 @@ Herní logika běží přímo na ESP32-C3, bez cloudu a bez externích služeb.
 LED pásek slouží jako herní pole, po kterém se pohybují barevné střely hráče a nepřítele.
 Hráč reaguje výběrem správné barvy pomocí webového rozhraní.
 
+<img src="https://github.com/LaskaKit/ESPwled/blob/main/SW/hra_Color_game/ESPWLED%20Color%20game.jpeg" width="400">
+
 ---
 
 ## Hlavní vlastnosti
